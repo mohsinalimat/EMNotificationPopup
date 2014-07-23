@@ -2,7 +2,7 @@ EMNotificationPopup
 ==============================
 ![](https://dl.dropboxusercontent.com/u/37783784/EMNotificationPopup.gif)
 
-EMNotificationPopup is a customizable, easy and ready to use notification Popup.
+EMNotificationPopup is a customizable, easy and ready to use notification Popup with nice animations.
 
 * Built to be Universal
 * Uses ARC (Automatic Reference Counting)
