@@ -51,8 +51,28 @@
     [_notificationPopup showWithEnterDirection:EMNotificationPopupToRight andExitDirection:EMNotificationPopupToRight];
 }
 
+- (IBAction)showCustomPopup:(id)sender {
+    UIView *simpleView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
+    simpleView.backgroundColor = [UIColor purpleColor];
+    
+    
+    UIButton *dismissMe = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 70.0f, 100.0f, 30.0f)];
+    dismissMe.backgroundColor = [UIColor grayColor];
+    [simpleView addSubview:dismissMe];
+    
+    _notificationPopup = [[EMNotificationPopup alloc] initWithView:simpleView];
+    _notificationPopup.delegate = self;
+    [_notificationPopup showWithEnterDirection:EMNotificationPopupToRight andExitDirection:EMNotificationPopupToDown];
+    
+    [dismissMe addTarget:self action:@selector(dismissCustomView) forControlEvents:UIControlEventTouchDown];
+}
+
 #pragma mark - EMNotificationPopupDelegate
 - (void) emActionClicked {
+    [_notificationPopup dismissWithAnimation:YES];
+}
+
+- (void) dismissCustomView {
     [_notificationPopup dismissWithAnimation:YES];
 }
 
