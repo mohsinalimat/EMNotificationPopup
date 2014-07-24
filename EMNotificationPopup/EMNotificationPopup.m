@@ -28,6 +28,8 @@
     
     EMNotificationPopupDirection enterDirection;
     EMNotificationPopupDirection exitDirection;
+    
+    CGSize popoverSize;
 }
 
 @synthesize delegate = _delegate;
@@ -35,6 +37,7 @@
 - (id) initWithImage:(UIImage *)image andTitle:(NSString *)title andSubTitle:(NSString *) subtitle andButtonTitle:(NSString *)buttonTitle {
     if (self = [super init]) {
         // Default
+        popoverSize = CGSizeMake(kDefaultWidth, kDefaultHeight);
         enterDirection = EMNotificationPopupToDown;
         exitDirection = EMNotificationPopupToDown;
 
@@ -112,12 +115,7 @@
         [popoverView addSubview:actionView];
         [popoverView addSubview:actionTitle];
 
-        backgroundView = [[UIView alloc] init];
-        backgroundView.frame = self.frame;
-        backgroundView.backgroundColor = [UIColor blackColor];
-        backgroundView.alpha = .7f;
-        
-        [self addSubview:backgroundView];
+        [self addOpaqueBackground];
         [self addSubview:popoverView];
     }
     
@@ -126,10 +124,17 @@
 
 - (id) initWithView:(UIView *)view {
     if (self = [super init]) {
+        // Default
+        enterDirection = EMNotificationPopupToDown;
+        exitDirection = EMNotificationPopupToDown;
+        
+        self.frame = [[UIApplication sharedApplication] keyWindow].frame;
+        
         popoverView = view;
-        
-        popoverView.frame = CGRectMake(popoverView.frame.origin.x, popoverView.frame.origin.y - popoverView.frame.size.height, popoverView.frame.size.width, popoverView.frame.size.height);
-        
+        popoverSize = CGSizeMake(view.frame.size.width, view.frame.size.height);
+        [self manageInitialPopoverPosition];
+
+        [self addOpaqueBackground];
         [self addSubview:popoverView];
     }
     
@@ -156,8 +161,7 @@
 - (void) showWithEnterDirection:(EMNotificationPopupDirection)enter andExitDirection:(EMNotificationPopupDirection) exit {
     enterDirection = enter;
     exitDirection = exit;
-    
-    
+
     [self manageInitialPopoverPosition];
     [self show];
 }
@@ -192,19 +196,28 @@
     return !self.isHidden;
 }
 
+- (void) addOpaqueBackground {
+    backgroundView = [[UIView alloc] init];
+    backgroundView.frame = self.frame;
+    backgroundView.backgroundColor = [UIColor blackColor];
+    backgroundView.alpha = .7f;
+    
+    [self addSubview:backgroundView];
+}
+
 - (void) manageInitialPopoverPosition {
     switch (enterDirection) {
         case EMNotificationPopupToDown:
-            popoverView.frame = CGRectMake(([[UIApplication sharedApplication] keyWindow].frame.size.width - kDefaultWidth) / 2.0f, -kDefaultHeight, kDefaultWidth, kDefaultHeight);
+            popoverView.frame = CGRectMake(([[UIApplication sharedApplication] keyWindow].frame.size.width - popoverSize.width) / 2.0f, -popoverSize.height, popoverSize.width, popoverSize.height);
             break;
         case EMNotificationPopupToTop:
-            popoverView.frame = CGRectMake(([[UIApplication sharedApplication] keyWindow].frame.size.width - kDefaultWidth) / 2.0f, [[UIApplication sharedApplication] keyWindow].frame.size.height, kDefaultWidth, kDefaultHeight);
+            popoverView.frame = CGRectMake(([[UIApplication sharedApplication] keyWindow].frame.size.width - popoverSize.width) / 2.0f, [[UIApplication sharedApplication] keyWindow].frame.size.height, popoverSize.width, popoverSize.height);
             break;
         case EMNotificationPopupToLeft:
-            popoverView.frame = CGRectMake([[UIApplication sharedApplication] keyWindow].frame.size.width, ([[UIApplication sharedApplication] keyWindow].frame.size.height - kDefaultWidth) / 2.0f, kDefaultWidth, kDefaultHeight);
+            popoverView.frame = CGRectMake([[UIApplication sharedApplication] keyWindow].frame.size.width, ([[UIApplication sharedApplication] keyWindow].frame.size.height - popoverSize.width) / 2.0f, popoverSize.width, popoverSize.height);
             break;
         case EMNotificationPopupToRight:
-            popoverView.frame = CGRectMake(-kDefaultWidth, ([[UIApplication sharedApplication] keyWindow].frame.size.height - kDefaultWidth) / 2.0f, kDefaultWidth, kDefaultHeight);
+            popoverView.frame = CGRectMake(-popoverSize.width, ([[UIApplication sharedApplication] keyWindow].frame.size.height - popoverSize.width) / 2.0f, popoverSize.width, popoverSize.height);
             break;
         default:
             break;
@@ -215,16 +228,16 @@
     CGPoint newCenter;
     switch (exitDirection) {
         case EMNotificationPopupToDown:
-            newCenter = CGPointMake(popoverView.center.x, [[UIApplication sharedApplication] keyWindow].frame.size.height + kDefaultHeight);
+            newCenter = CGPointMake(popoverView.center.x, [[UIApplication sharedApplication] keyWindow].frame.size.height + popoverSize.height);
             break;
         case EMNotificationPopupToTop:
-            newCenter = CGPointMake(popoverView.center.x, -kDefaultHeight);
+            newCenter = CGPointMake(popoverView.center.x, -popoverSize.height);
             break;
         case EMNotificationPopupToLeft:
-            newCenter = CGPointMake(-kDefaultWidth, popoverView.center.y);
+            newCenter = CGPointMake(-popoverSize.width, popoverView.center.y);
             break;
         case EMNotificationPopupToRight:
-            newCenter = CGPointMake([[UIApplication sharedApplication] keyWindow].frame.size.width + kDefaultWidth, popoverView.center.y);
+            newCenter = CGPointMake([[UIApplication sharedApplication] keyWindow].frame.size.width + popoverSize.width, popoverView.center.y);
             break;
         default:
             break;
