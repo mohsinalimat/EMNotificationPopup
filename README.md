@@ -33,7 +33,7 @@ $ open YourOwnProject.xcworkspace
 Alternatively you can just copy all the files included in the folder [EMNotificationPopup](https://github.com/ennioma/EMNotificationPopup/tree/master/EMNotificationPopup) and start playing with it!
 
 ## How it works?
-### EMAccordionTableViewController Class
+### EMNotificationPopup Class
 
 ```objective-c
 @interface EMNotificationPopup : UIView
@@ -60,11 +60,26 @@ Alternatively you can just copy all the files included in the folder [EMNotifica
 ```
 
 ## How to use it?
-### Example
+### Example - Use the default popup view
 ```objective-c
     EMNotificationPopup *notificationPopup = [[EMNotificationPopup alloc] initWithImage:[UIImage imageNamed:@"alert_image"] andTitle:@"Hi, this is an alert message!" andSubTitle:@"Sorry for this message :)" andButtonTitle:@"OK"];
     notificationPopup.delegate = self;
     [notificationPopup showWithEnterDirection:EMNotificationPopupToDown andExitDirection:EMNotificationPopupToLeft];
+```
+
+### Example - Use a custom view
+```objective-c
+    UIView *simpleView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
+    simpleView.backgroundColor = [UIColor purpleColor];
+    
+    UIButton *dismissMe = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 70.0f, 100.0f, 30.0f)];
+    dismissMe.backgroundColor = [UIColor grayColor];
+    [simpleView addSubview:dismissMe];
+    [dismissMe addTarget:self action:@selector(dismissCustomView) forControlEvents:UIControlEventTouchDown];
+
+    _notificationPopup = [[EMNotificationPopup alloc] initWithView:simpleView];
+    _notificationPopup.delegate = self;
+    [_notificationPopup showWithEnterDirection:EMNotificationPopupToRight andExitDirection:EMNotificationPopupToDown];
 ```
 
 ## Help me improving this!
