@@ -17,13 +17,17 @@
 		6D7998CE197FE53600007ED8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7998CD197FE53600007ED8 /* main.m */; };
 		6D7998D2197FE53600007ED8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7998D1197FE53600007ED8 /* AppDelegate.m */; };
 		6D7998D5197FE53600007ED8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7998D3197FE53600007ED8 /* Main.storyboard */; };
-		6D7998D8197FE53600007ED8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7998D7197FE53600007ED8 /* ViewController.m */; };
 		6D7998DA197FE53600007ED8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D7998D9197FE53600007ED8 /* Images.xcassets */; };
 		6D7998E1197FE53600007ED8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7998E0197FE53600007ED8 /* XCTest.framework */; };
 		6D7998E2197FE53600007ED8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7998C1197FE53500007ED8 /* Foundation.framework */; };
 		6D7998E3197FE53600007ED8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7998C5197FE53600007ED8 /* UIKit.framework */; };
 		6D7998EB197FE53600007ED8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D7998E9197FE53600007ED8 /* InfoPlist.strings */; };
 		6D7998ED197FE53600007ED8 /* EMNotificationPopupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7998EC197FE53600007ED8 /* EMNotificationPopupTests.m */; };
+		6DCA7B08199367F6003E771A /* SlimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA7B07199367F6003E771A /* SlimViewController.m */; };
+		6DCA7B0B199369B3003E771A /* BigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA7B0A199369B3003E771A /* BigViewController.m */; };
+		6DCA7B0E199369D7003E771A /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA7B0D199369D7003E771A /* CustomViewController.m */; };
+		6DCA7B1119938081003E771A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA7B0F19938081003E771A /* close.png */; };
+		6DCA7B1219938081003E771A /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA7B1019938081003E771A /* close@2x.png */; };
 		6DF07037197FE65E00EF4287 /* EMNotificationPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07036197FE65E00EF4287 /* EMNotificationPopup.m */; };
 /* End PBXBuildFile section */
 
@@ -54,14 +58,20 @@
 		6D7998D0197FE53600007ED8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D7998D1197FE53600007ED8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D7998D4197FE53600007ED8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6D7998D6197FE53600007ED8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6D7998D7197FE53600007ED8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6D7998D9197FE53600007ED8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D7998DF197FE53600007ED8 /* EMNotificationPopupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMNotificationPopupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7998E0197FE53600007ED8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6D7998E8197FE53600007ED8 /* EMNotificationPopupTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EMNotificationPopupTests-Info.plist"; sourceTree = "<group>"; };
 		6D7998EA197FE53600007ED8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D7998EC197FE53600007ED8 /* EMNotificationPopupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMNotificationPopupTests.m; sourceTree = "<group>"; };
+		6DCA7B06199367F6003E771A /* SlimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlimViewController.h; sourceTree = "<group>"; };
+		6DCA7B07199367F6003E771A /* SlimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlimViewController.m; sourceTree = "<group>"; };
+		6DCA7B09199369B3003E771A /* BigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigViewController.h; sourceTree = "<group>"; };
+		6DCA7B0A199369B3003E771A /* BigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigViewController.m; sourceTree = "<group>"; };
+		6DCA7B0C199369D7003E771A /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		6DCA7B0D199369D7003E771A /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		6DCA7B0F19938081003E771A /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		6DCA7B1019938081003E771A /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		6DF07035197FE65E00EF4287 /* EMNotificationPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMNotificationPopup.h; sourceTree = "<group>"; };
 		6DF07036197FE65E00EF4287 /* EMNotificationPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMNotificationPopup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				6D24D161197FFC9E0083ED6B /* alert_image.png */,
+				6DCA7B0F19938081003E771A /* close.png */,
+				6DCA7B1019938081003E771A /* close@2x.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -131,6 +143,7 @@
 		6D7998C7197FE53600007ED8 /* EMNotificationPopup */ = {
 			isa = PBXGroup;
 			children = (
+				6DCA7B05199367F6003E771A /* demo_classes */,
 				6D7998D0197FE53600007ED8 /* AppDelegate.h */,
 				6D7998D1197FE53600007ED8 /* AppDelegate.m */,
 				6D24D160197FFC9E0083ED6B /* assets */,
@@ -138,8 +151,6 @@
 				6D7998D9197FE53600007ED8 /* Images.xcassets */,
 				6D7998D3197FE53600007ED8 /* Main.storyboard */,
 				6D7998C8197FE53600007ED8 /* Supporting Files */,
-				6D7998D6197FE53600007ED8 /* ViewController.h */,
-				6D7998D7197FE53600007ED8 /* ViewController.m */,
 			);
 			path = EMNotificationPopup;
 			sourceTree = "<group>";
@@ -171,6 +182,19 @@
 				6D7998E9197FE53600007ED8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6DCA7B05199367F6003E771A /* demo_classes */ = {
+			isa = PBXGroup;
+			children = (
+				6DCA7B09199369B3003E771A /* BigViewController.h */,
+				6DCA7B0A199369B3003E771A /* BigViewController.m */,
+				6DCA7B0C199369D7003E771A /* CustomViewController.h */,
+				6DCA7B0D199369D7003E771A /* CustomViewController.m */,
+				6DCA7B06199367F6003E771A /* SlimViewController.h */,
+				6DCA7B07199367F6003E771A /* SlimViewController.m */,
+			);
+			path = demo_classes;
 			sourceTree = "<group>";
 		};
 		6DF07034197FE61300EF4287 /* EMNotificationPopup */ = {
@@ -266,6 +290,8 @@
 				6D24D162197FFC9E0083ED6B /* alert_image.png in Resources */,
 				6D7998DA197FE53600007ED8 /* Images.xcassets in Resources */,
 				6D7998CC197FE53600007ED8 /* InfoPlist.strings in Resources */,
+				6DCA7B1219938081003E771A /* close@2x.png in Resources */,
+				6DCA7B1119938081003E771A /* close.png in Resources */,
 				6D7998D5197FE53600007ED8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,11 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D7998D8197FE53600007ED8 /* ViewController.m in Sources */,
+				6DCA7B08199367F6003E771A /* SlimViewController.m in Sources */,
 				6D24D15C197FE9660083ED6B /* UIColor+EMNotificationPopup.m in Sources */,
 				6DF07037197FE65E00EF4287 /* EMNotificationPopup.m in Sources */,
+				6DCA7B0E199369D7003E771A /* CustomViewController.m in Sources */,
 				6D7998D2197FE53600007ED8 /* AppDelegate.m in Sources */,
 				6D24D15F197FEB500083ED6B /* UIFont+EMNotificationPopup.m in Sources */,
+				6DCA7B0B199369B3003E771A /* BigViewController.m in Sources */,
 				6D7998CE197FE53600007ED8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

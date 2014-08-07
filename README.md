@@ -15,7 +15,7 @@ The recommended approach is to install `EMNotificationPopup` via [CocoaPods](htt
 
 ``` bash
 platform :ios, '6.0'
-pod 'EMNotificationPopup', '~> 0.1'
+pod 'EMNotificationPopup', '~> 0.2'
 ```
 
 And then install running
@@ -40,14 +40,29 @@ Alternatively you can just copy all the files included in the folder [EMNotifica
 
 @property NSObject <EMNotificationPopupDelegate> *delegate;
 
-- (id) initWithImage:(UIImage *)image andTitle:(NSString *)title andSubTitle:(NSString *) subtitle andButtonTitle:(NSString *)buttonTitle;
-- (id) initWithView:(UIView *)view;
+@property (nonatomic, strong) NSString *actionTitle;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSString *subtitle;
+@property (nonatomic, strong) NSString *title;
 
+// Init default View
+- (id) initWithType: (EMNotificationPopupType) type enterDirection:(EMNotificationPopupDirection) enter exitDirection:(EMNotificationPopupDirection) exit popupPosition: (EMNotificationPopupPosition) position;
+
+// Init custom view
+- (id) initWithView:(UIView *)view enterDirection:(EMNotificationPopupDirection) enter exitDirection:(EMNotificationPopupDirection) exit popupPosition: (EMNotificationPopupPosition) position;
+
+// Actions on the popup view
 - (void) dismissWithAnimation:(BOOL) animate;
-- (BOOL) isVisible;
 - (void) show;
-- (void) showWithEnterDirection:(EMNotificationPopupDirection)enterDirection andExitDirection:(EMNotificationPopupDirection) exitDirection;
+- (BOOL) isVisible;
 
+// Customize the default view
+- (void) setPopupActionBackgroundColor: (UIColor *) color;
+- (void) setPopupActionTitleColor: (UIColor *) color;
+- (void) setPopupBorderColor: (UIColor *)color;
+- (void) setPopupBackgroundColor:(UIColor *)color;
+- (void) setPopupSubtitleColor:(UIColor *)color;
+- (void) setPopupTitleColor:(UIColor *)color;
 @end
 ```
     
@@ -55,7 +70,7 @@ Alternatively you can just copy all the files included in the folder [EMNotifica
 
 ```objective-c
 @protocol EMNotificationPopupDelegate
-- (void) emActionClicked;
+- (void) emNotificationPopupActionClicked;
 @end
 ```
 
@@ -67,19 +82,62 @@ Alternatively you can just copy all the files included in the folder [EMNotifica
     [notificationPopup showWithEnterDirection:EMNotificationPopupToDown andExitDirection:EMNotificationPopupToLeft];
 ```
 
+### Example - Use default views
+An example about the use of a "Big" Notification Popup. This is a big (taller than larger) notification that is able to show an image, a title and a subtitle.
+If you instantiate a EMNotificationPopupBigButton you can customize the action button title and color. This button is used to dismiss the view.
+
+```objective-c
+    _notificationPopup = [[EMNotificationPopup alloc] initWithType:notificationPopupType enterDirection:EMNotificationPopupToDown exitDirection:EMNotificationPopupToLeft popupPosition:position];
+    _notificationPopup.delegate = self;
+    
+    _notificationPopup.title = @"Sorry for this Alert message :)";
+    _notificationPopup.subtitle = @"Awesome message :)";
+    _notificationPopup.image = [UIImage imageNamed:@"alert_image"];
+    
+    if (notificationPopupType == EMNotificationPopupBigButton)
+        _notificationPopup.actionTitle = @"OK";
+    
+    [_notificationPopup show];
+```
+
+An example about the use of a "Slim" Notification Popup. This is a slim rectangular notification that is able to show just a title.
+
+```objective-c
+    _notificationPopup = [[EMNotificationPopup alloc] initWithType:EMNotificationPopupSlim enterDirection:EMNotificationPopupToDown exitDirection:EMNotificationPopupToLeft popupPosition:position];
+    _notificationPopup.delegate = self;
+    
+    _notificationPopup.title = @"Sorry for this Alert message :)";
+    
+    [_notificationPopup show];
+```
+
+Both views can be easily customized using the following methods:
+```objective-c
+- (void) setPopupActionBackgroundColor: (UIColor *) color;
+- (void) setPopupActionTitleColor: (UIColor *) color;
+- (void) setPopupBorderColor: (UIColor *)color;
+- (void) setPopupBackgroundColor:(UIColor *)color;
+- (void) setPopupSubtitleColor:(UIColor *)color;
+- (void) setPopupTitleColor:(UIColor *)color;
+```
+
+
+
 ### Example - Use a custom view
 ```objective-c
-    UIView *simpleView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
-    simpleView.backgroundColor = [UIColor purpleColor];
-    
-    UIButton *dismissMe = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 70.0f, 100.0f, 30.0f)];
-    dismissMe.backgroundColor = [UIColor grayColor];
-    [simpleView addSubview:dismissMe];
-    [dismissMe addTarget:self action:@selector(dismissCustomView) forControlEvents:UIControlEventTouchDown];
+    UIView *shownView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 250.0f, 125.0f)];
+    shownView.backgroundColor = [UIColor redColor];
 
-    _notificationPopup = [[EMNotificationPopup alloc] initWithView:simpleView];
+    UIButton *closeMe = [[UIButton alloc] initWithFrame:CGRectMake(shownView.frame.size.width - 25.0f, 3.0f, 22.0f, 22.0f)];
+    closeMe.backgroundColor = [UIColor clearColor];
+    [closeMe setBackgroundImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [closeMe addTarget:self action:@selector(dismissMe) forControlEvents:UIControlEventTouchDown];
+    [shownView addSubview:closeMe];
+    
+    _notificationPopup = [[EMNotificationPopup alloc] initWithView:shownView enterDirection:EMNotificationPopupToRight exitDirection:EMNotificationPopupToRight popupPosition:position];
     _notificationPopup.delegate = self;
-    [_notificationPopup showWithEnterDirection:EMNotificationPopupToRight andExitDirection:EMNotificationPopupToDown];
+    
+    [_notificationPopup show];
 ```
 
 ## Help me improving this!
