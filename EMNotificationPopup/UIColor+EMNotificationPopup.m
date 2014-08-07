@@ -10,24 +10,32 @@
 
 @implementation UIColor (EMNotificationPopup)
 
-+ (UIColor *) EMNotificationPopupActionBackgroundColor {
-    return [UIColor colorWithRed:255.0f/255.0f green:244.0f/255.0f blue:0.0f/255.0f alpha:1.0f];    
++ (UIColor *) EMNotificationPopupBigActionBackgroundColor {
+    return [UIColor colorWithRed:38.0f/255.0f green:97.0f/255.0f blue:107.0f/255.0f alpha:1.0f];
 }
 
-+ (UIColor *) EMNotificationPopupBackgroundColor {
++ (UIColor *) EMNotificationPopupBigActionTitleColor {
     return [UIColor whiteColor];
 }
 
-+ (UIColor *) EMNotificationPopupActionColor {
-    return [UIColor blackColor];    
++ (UIColor *) EMNotificationPopupBigBackgroundColor {
+    return [UIColor whiteColor];
 }
 
-+ (UIColor *) EMNotificationPopupBorderColor {
++ (UIColor *) EMNotificationPopupBigBorderColor {
     return [UIColor colorWithRed:255.0f/255.0f green:244.0f/255.0f blue:0.0f/255.0f alpha:1.0f];
 }
 
++ (UIColor *) EMNotificationPopupSlimBackgroundColor {
+    return [UIColor colorWithRed:255.0f/255.0f green:244.0f/255.0f blue:0.0f/255.0f alpha:1.0f];
+}
+
++ (UIColor *) EMNotificationPopupSlimBorderColor {
+    return [UIColor colorWithRed:128.0f/255.0f green:128.0f/255.0f blue:21.0f/255.0f alpha:1.0f];
+}
+
 + (UIColor *) EMNotificationPopupSubtitleColor {
-    return [UIColor lightGrayColor];
+    return [UIColor blackColor];
 }
 
 + (UIColor *) EMNotificationPopupTitleColor {

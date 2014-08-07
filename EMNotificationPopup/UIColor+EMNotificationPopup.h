@@ -10,11 +10,15 @@
 
 @interface UIColor (EMNotificationPopup)
 
-+ (UIColor *) EMNotificationPopupActionBackgroundColor;
-+ (UIColor *) EMNotificationPopupBackgroundColor;
++ (UIColor *) EMNotificationPopupBigActionBackgroundColor;
++ (UIColor *) EMNotificationPopupBigActionTitleColor;
 
-+ (UIColor *) EMNotificationPopupActionColor;
-+ (UIColor *) EMNotificationPopupBorderColor;
++ (UIColor *) EMNotificationPopupBigBackgroundColor;
++ (UIColor *) EMNotificationPopupBigBorderColor;
+
++ (UIColor *) EMNotificationPopupSlimBackgroundColor;
++ (UIColor *) EMNotificationPopupSlimBorderColor;
+
 + (UIColor *) EMNotificationPopupSubtitleColor;
 + (UIColor *) EMNotificationPopupTitleColor;
 
