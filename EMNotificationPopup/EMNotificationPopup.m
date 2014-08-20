@@ -260,18 +260,17 @@
 
 - (void) setPopupBackgroundColor:(UIColor *)color {
     popupBackgroundColor = color;
-    
     self.backgroundColor = popupBackgroundColor;
 }
 
 - (void) setPopupBorderColor: (UIColor *)color {
     popupBorderColor = color;
-    self.layer.borderColor = popupBackgroundColor.CGColor;
+    self.layer.borderColor = popupBorderColor.CGColor;
 }
 
 - (void) setPopupSubtitleColor:(UIColor *)color {
     popupSubtitleColor = color;
-    popupSubtitle.textColor = popupTitleColor;
+    popupSubtitle.textColor = popupSubtitleColor;
 }
 
 - (void) setPopupTitleColor:(UIColor *)color {
