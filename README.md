@@ -1,4 +1,4 @@
-EMNotificationPopup
+ENotificationPopup
 ==============================
 ![](https://dl.dropboxusercontent.com/u/37783784/EMNotificationPopup.gif)
 
@@ -140,6 +140,9 @@ Both views can be easily customized using the following methods:
     [_notificationPopup show];
 ```
 
+## Apps using EMNotificationPopup 
+[Twists&Turns](https://itunes.apple.com/au/app/twists-and-turns/id909597408?l=it&ls=1&mt=8)
+ 
 ## Help me improving this!
 How? Simply feel free to fork the project and improve it!
 
