@@ -250,12 +250,12 @@
 // Customize the default view
 - (void) setPopupActionBackgroundColor: (UIColor *) color {
     popupActionBackgroundColor = color;
-    actionView.backgroundColor = popupActionBackgroundColor;
+    actionTitleLbl.backgroundColor = popupActionBackgroundColor;
 }
 
 - (void) setPopupActionTitleColor: (UIColor *) color {
     popupActionTitleColor = color;
-    actionTitleLbl.backgroundColor = popupActionTitleColor;
+    actionTitleLbl.textColor = popupActionTitleColor;
 }
 
 - (void) setPopupBackgroundColor:(UIColor *)color {
