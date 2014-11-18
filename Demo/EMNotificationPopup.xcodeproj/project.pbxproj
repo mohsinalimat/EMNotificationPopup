@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1B9D3F1A1BB22900FD5CEB /* CustomBounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B9D3E1A1BB22900FD5CEB /* CustomBounceViewController.m */; };
 		6D24D15C197FE9660083ED6B /* UIColor+EMNotificationPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D24D15B197FE9660083ED6B /* UIColor+EMNotificationPopup.m */; };
 		6D24D15F197FEB500083ED6B /* UIFont+EMNotificationPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D24D15E197FEB500083ED6B /* UIFont+EMNotificationPopup.m */; };
 		6D24D162197FFC9E0083ED6B /* alert_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D24D161197FFC9E0083ED6B /* alert_image.png */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D1B9D3D1A1BB22900FD5CEB /* CustomBounceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBounceViewController.h; sourceTree = "<group>"; };
+		6D1B9D3E1A1BB22900FD5CEB /* CustomBounceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBounceViewController.m; sourceTree = "<group>"; };
 		6D24D15A197FE9660083ED6B /* UIColor+EMNotificationPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EMNotificationPopup.h"; sourceTree = "<group>"; };
 		6D24D15B197FE9660083ED6B /* UIColor+EMNotificationPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EMNotificationPopup.m"; sourceTree = "<group>"; };
 		6D24D15D197FEB500083ED6B /* UIFont+EMNotificationPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+EMNotificationPopup.h"; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 			children = (
 				6DCA7B09199369B3003E771A /* BigViewController.h */,
 				6DCA7B0A199369B3003E771A /* BigViewController.m */,
+				6D1B9D3D1A1BB22900FD5CEB /* CustomBounceViewController.h */,
+				6D1B9D3E1A1BB22900FD5CEB /* CustomBounceViewController.m */,
 				6DCA7B0C199369D7003E771A /* CustomViewController.h */,
 				6DCA7B0D199369D7003E771A /* CustomViewController.m */,
 				6DCA7B06199367F6003E771A /* SlimViewController.h */,
@@ -318,6 +323,7 @@
 				6D7998D2197FE53600007ED8 /* AppDelegate.m in Sources */,
 				6D24D15F197FEB500083ED6B /* UIFont+EMNotificationPopup.m in Sources */,
 				6DCA7B0B199369B3003E771A /* BigViewController.m in Sources */,
+				6D1B9D3F1A1BB22900FD5CEB /* CustomBounceViewController.m in Sources */,
 				6D7998CE197FE53600007ED8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

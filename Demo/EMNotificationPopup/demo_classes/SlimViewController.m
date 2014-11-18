@@ -41,6 +41,7 @@
         _notificationPopup.delegate = self;
         
         _notificationPopup.title = @"Sorry for this Alert message :)";
+        [_notificationPopup setBouncePower:EMNotificationPopupBounceMedium];
         
         [_notificationPopup show];
     }
