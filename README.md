@@ -15,7 +15,7 @@ The recommended approach is to install `EMNotificationPopup` via [CocoaPods](htt
 
 ``` bash
 platform :ios, '6.0'
-pod 'EMNotificationPopup', '~> 0.2'
+pod 'EMNotificationPopup', '~> 0.2.2'
 ```
 
 And then install running
@@ -55,6 +55,9 @@ Alternatively you can just copy all the files included in the folder [EMNotifica
 - (void) dismissWithAnimation:(BOOL) animate;
 - (void) show;
 - (BOOL) isVisible;
+
+// (new in 0.2.2) Customize the bounce power
+- (void) setBouncePower:(NSInteger) bouncePower;
 
 // Customize the default view
 - (void) setPopupActionBackgroundColor: (UIColor *) color;
@@ -142,6 +145,7 @@ Both views can be easily customized using the following methods:
 
 ## Apps using EMNotificationPopup 
 [Twists&Turns](https://itunes.apple.com/au/app/twists-and-turns/id909597408?l=it&ls=1&mt=8)
+[My Soldier for Battlefield 4](https://itunes.apple.com/us/app/my-soldier-for-battlefield-4/id718845676)
  
 ## Help me improving this!
 How? Simply feel free to fork the project and improve it!
