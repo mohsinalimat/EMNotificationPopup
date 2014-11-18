@@ -144,8 +144,9 @@ Both views can be easily customized using the following methods:
 ```
 
 ## Apps using EMNotificationPopup 
-[Twists&Turns](https://itunes.apple.com/au/app/twists-and-turns/id909597408?l=it&ls=1&mt=8)
-[My Soldier for Battlefield 4](https://itunes.apple.com/us/app/my-soldier-for-battlefield-4/id718845676)
+  [Twists&Turns](https://itunes.apple.com/au/app/twists-and-turns/id909597408?l=it&ls=1&mt=8)
+
+  [My Soldier for Battlefield 4](https://itunes.apple.com/us/app/my-soldier-for-battlefield-4/id718845676)
  
 ## Help me improving this!
 How? Simply feel free to fork the project and improve it!
