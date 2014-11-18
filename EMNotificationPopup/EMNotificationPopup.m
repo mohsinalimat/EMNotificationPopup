@@ -47,6 +47,8 @@
     UIColor *popupBorderColor;
     UIColor *popupSubtitleColor;
     UIColor *popupTitleColor;
+    
+    NSInteger bouncePower;
 }
 
 @synthesize delegate = _delegate;
@@ -64,6 +66,8 @@
         enterDirection = enter;
         exitDirection = exit;
         popupPosition = position;
+        
+        bouncePower = EMNotificationPopupBounceMedium;
         
         switch (popupType) {
             case EMNotificationPopupSlim:
@@ -110,7 +114,6 @@
 }
 
 - (void) initBigPopup {
-    [self addOpaqueBackground];
     popoverSize = CGSizeMake(kDefaultBigPopupWidth, kDefaultBigPopupHeight);
     
     [self manageInitialPopoverPosition];
@@ -162,7 +165,6 @@
 }
 
 - (void) initBigPopupButton {
-    [self addOpaqueBackground];
     popoverSize = CGSizeMake(kDefaultBigPopupWidth, kDefaultBigPopupHeight);
     
     [self manageInitialPopoverPosition];
@@ -247,6 +249,11 @@
     popupTitle.text = _title;
 }
 
+// Customize the bounce power
+- (void) setBouncePower:(NSInteger) bouncePwr {
+    bouncePower = bouncePwr;
+}
+
 // Customize the default view
 - (void) setPopupActionBackgroundColor: (UIColor *) color {
     popupActionBackgroundColor = color;
@@ -288,7 +295,6 @@
         popoverSize = CGSizeMake(view.frame.size.width, view.frame.size.height);
         [self manageInitialPopoverPosition];
 
-        [self addOpaqueBackground];
         [self addSubview:view];
     }
     
@@ -302,11 +308,13 @@
 }
 
 - (void) show {
+    [self addOpaqueBackground];
+    
     [[[UIApplication sharedApplication] keyWindow] addSubview:self];
-    [UIView animateWithDuration:1.0f
-                          delay:0.2f
-         usingSpringWithDamping:0.3f
-          initialSpringVelocity:0.2f
+    [UIView animateWithDuration:0.8f
+                          delay:0.01f
+         usingSpringWithDamping:[self computeDamping]
+          initialSpringVelocity:0.1f
                         options:UIViewAnimationOptionCurveEaseOut animations:^{
                             switch (popupPosition) {
                                 case EMNotificationPopupPositionTop:
@@ -363,7 +371,11 @@
     backgroundView.backgroundColor = [UIColor blackColor];
     backgroundView.alpha = .7f;
     
-    [[[UIApplication sharedApplication] keyWindow] addSubview:backgroundView];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[[UIApplication sharedApplication] keyWindow] insertSubview:backgroundView belowSubview:self];
+        });
+    });
 }
 
 - (void) manageInitialPopoverPosition {
@@ -437,6 +449,26 @@
     }
     
     return newCenter;
+}
+
+- (CGFloat) computeDamping {
+    switch (bouncePower) {
+        case EMNotificationPopupNoBounce:
+            return 1.0f;
+            break;
+        case EMNotificationPopupBounceWeak:
+            return 0.8f;
+            break;
+        case EMNotificationPopupBounceMedium:
+            return 0.5f;
+            break;
+        case EMNotificationPopupBounceStrong:
+            return 0.1f;
+            break;
+        default:
+            return 0.5f;
+            break;
+    }
 }
 
 @end

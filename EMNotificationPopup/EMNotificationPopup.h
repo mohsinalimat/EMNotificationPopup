@@ -22,9 +22,16 @@ typedef NS_ENUM(NSInteger, EMNotificationPopupPosition) {
 };
 
 typedef NS_ENUM(NSInteger, EMNotificationPopupType) {
-    EMNotificationPopupSlim = 0, // Title without any background
-    EMNotificationPopupBig = 1,  // Title + Image + Subtitle + black semitransparent background
+    EMNotificationPopupSlim = 0,       // Title without any background
+    EMNotificationPopupBig = 1,        // Title + Image + Subtitle + black semitransparent background
     EMNotificationPopupBigButton = 2,  // Title + Image + Subtitle + Button + black semitransparent background
+};
+
+typedef NS_ENUM(NSInteger, EMNotificationPopupBouncePower) {
+    EMNotificationPopupNoBounce = 0,
+    EMNotificationPopupBounceWeak = 1,
+    EMNotificationPopupBounceMedium = 2,
+    EMNotificationPopupBounceStrong = 3,
 };
 
 @protocol EMNotificationPopupDelegate
@@ -50,6 +57,9 @@ typedef NS_ENUM(NSInteger, EMNotificationPopupType) {
 - (void) dismissWithAnimation:(BOOL) animate;
 - (void) show;
 - (BOOL) isVisible;
+
+// Customize the bounce power
+- (void) setBouncePower:(NSInteger) bouncePower;
 
 // Customize the default view
 - (void) setPopupActionBackgroundColor: (UIColor *) color;
