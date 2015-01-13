@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'EMNotificationPopup'
-  s.version      = '0.2.2'
+  s.version      = '0.2.3'
   s.summary      = 'EMNotificationPopup is a customizable, easy and ready to use notification Popup with nice animations.'
   s.homepage     = 'https://github.com/ennioma/EMNotificationPopup'
   s.license      = { :type => 'APACHE',
