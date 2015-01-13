@@ -15,7 +15,7 @@ The recommended approach is to install `EMNotificationPopup` via [CocoaPods](htt
 
 ``` bash
 platform :ios, '6.0'
-pod 'EMNotificationPopup', '~> 0.2.2'
+pod 'EMNotificationPopup', '~> 0.2.3'
 ```
 
 And then install running
