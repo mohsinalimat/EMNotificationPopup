@@ -100,6 +100,7 @@
     popupTitle.font = [UIFont EMNotificationPopupTitleFont];
     popupTitle.textAlignment = NSTextAlignmentCenter;
     popupTitle.backgroundColor = [UIColor clearColor];
+    popupTitle.accessibilityTraits = UIAccessibilityTraitHeader;
     
     [self addSubview:titleView];
     [self addSubview:popupTitle];
@@ -151,6 +152,7 @@
     popupTitle.font = [UIFont EMNotificationPopupTitleFont];
     popupTitle.textAlignment = NSTextAlignmentCenter;
     popupTitle.backgroundColor = titleView.backgroundColor;
+    popupTitle.accessibilityTraits = UIAccessibilityTraitHeader;
     
     [self addSubview:titleView];
     [self addSubview:popupTitle];
@@ -188,6 +190,7 @@
     popupTitle.font = [UIFont EMNotificationPopupTitleFont];
     popupTitle.textAlignment = NSTextAlignmentCenter;
     popupTitle.backgroundColor = titleView.backgroundColor;
+    popupTitle.accessibilityTraits = UIAccessibilityTraitHeader;
     
     [self addSubview:titleView];
     [self addSubview:popupTitle];
@@ -323,7 +326,8 @@
                             }
                         }
                      completion:^(BOOL finished) {
-                         //Completion Block
+                         UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"Alert");
+                         UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self);
                      }];
 }
 - (void) dismissWithAnimation:(BOOL) animate {
@@ -362,6 +366,7 @@
     backgroundView.frame = CGRectMake(-200.0f, -200.0f, [[UIApplication sharedApplication] keyWindow].frame.size.width + 400.0f, [[UIApplication sharedApplication] keyWindow].frame.size.height + 400.0f);
     backgroundView.backgroundColor = [UIColor blackColor];
     backgroundView.alpha = .7f;
+    backgroundView.isAccessibilityElement = NO;
     
     [[[UIApplication sharedApplication] keyWindow] addSubview:backgroundView];
 }
