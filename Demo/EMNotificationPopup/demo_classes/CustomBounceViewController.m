@@ -9,6 +9,7 @@
 #import "CustomBounceViewController.h"
 
 @interface CustomBounceViewController ()
+@property (weak, nonatomic) IBOutlet UIStackView *buttonsStackView;
 
 @end
 
@@ -16,10 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 - (IBAction)showPopupWithoutBounce:(id)sender {

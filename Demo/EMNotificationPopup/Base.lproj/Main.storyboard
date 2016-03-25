@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xRX-8C-WYe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xRX-8C-WYe">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -32,44 +32,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-3V-ldy">
-                                <rect key="frame" x="120" y="267" width="80" height="30"/>
-                                <state key="normal" title="Big Popups">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UUO-YB-D4k" kind="push" id="EMl-WP-Y0r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-c8-kpr">
-                                <rect key="frame" x="105" y="364" width="111" height="30"/>
-                                <state key="normal" title="Custom Popups">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xav-d1-zmY" kind="push" id="VcM-Nb-IRm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-EI-ETx">
-                                <rect key="frame" x="117" y="173" width="87" height="30"/>
-                                <state key="normal" title="Slim Popups">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="l4V-Z0-pYu" kind="push" id="qnh-mD-szT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-ly-AsO">
-                                <rect key="frame" x="82" y="459" width="156" height="30"/>
-                                <state key="normal" title="Customize the Bounce">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="laD-q2-qCs" kind="push" id="SfW-NZ-fTT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lLc-JS-3W5">
+                                <rect key="frame" x="0.0" y="224" width="320" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-3V-ldy">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <state key="normal" title="Big Popups">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="UUO-YB-D4k" kind="push" id="EMl-WP-Y0r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-c8-kpr">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="30"/>
+                                        <state key="normal" title="Custom Popups">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xav-d1-zmY" kind="push" id="VcM-Nb-IRm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-EI-ETx">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="30"/>
+                                        <state key="normal" title="Slim Popups">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="l4V-Z0-pYu" kind="push" id="qnh-mD-szT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-ly-AsO">
+                                        <rect key="frame" x="0.0" y="90" width="320" height="30"/>
+                                        <state key="normal" title="Customize the Bounce">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="laD-q2-qCs" kind="push" id="SfW-NZ-fTT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lLc-JS-3W5" firstAttribute="width" secondItem="7t0-bf-3tX" secondAttribute="width" id="RFK-fc-61x"/>
+                            <constraint firstItem="lLc-JS-3W5" firstAttribute="centerX" secondItem="7t0-bf-3tX" secondAttribute="centerX" id="eSM-td-6TU"/>
+                            <constraint firstItem="lLc-JS-3W5" firstAttribute="centerY" secondItem="7t0-bf-3tX" secondAttribute="centerY" id="iND-dC-qVq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WOy-zH-8vt"/>
                 </viewController>
@@ -89,26 +99,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL6-uq-H73">
-                                <rect key="frame" x="94" y="233" width="133" height="30"/>
-                                <state key="normal" title="Slim Popup On Top">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showSlimPopupOnTop:" destination="l4V-Z0-pYu" eventType="touchUpInside" id="Obi-bO-X65"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y54-lZ-INV">
-                                <rect key="frame" x="81" y="305" width="159" height="30"/>
-                                <state key="normal" title="Slim Popup On Bottom">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showSlimPopupOnBottom:" destination="l4V-Z0-pYu" eventType="touchUpInside" id="3eW-oR-dsQ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-Xd-si0">
+                                <rect key="frame" x="82" y="254" width="156" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL6-uq-H73">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
+                                        <state key="normal" title="Slim Popup On Top">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showSlimPopupOnTop:" destination="l4V-Z0-pYu" eventType="touchUpInside" id="Obi-bO-X65"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y54-lZ-INV">
+                                        <rect key="frame" x="0.0" y="30" width="156" height="30"/>
+                                        <state key="normal" title="Slim Popup On Bottom">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showSlimPopupOnBottom:" destination="l4V-Z0-pYu" eventType="touchUpInside" id="3eW-oR-dsQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gRZ-Xd-si0" firstAttribute="centerX" secondItem="dvw-yL-0h9" secondAttribute="centerX" id="glt-Ny-qhP"/>
+                            <constraint firstItem="gRZ-Xd-si0" firstAttribute="centerY" secondItem="dvw-yL-0h9" secondAttribute="centerY" id="pm2-Kf-tvp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y26-fK-5LN"/>
                 </viewController>
@@ -128,44 +147,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-rp-g4y">
-                                <rect key="frame" x="97" y="176" width="126" height="30"/>
-                                <state key="normal" title="Big Popup On Top">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showBigPopupOnTop:" destination="UUO-YB-D4k" eventType="touchUpInside" id="wr0-Cz-FzQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-O7-HbT">
-                                <rect key="frame" x="84" y="240" width="152" height="30"/>
-                                <state key="normal" title="Big Popup On Bottom">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showBigPopupOnBottom:" destination="UUO-YB-D4k" eventType="touchUpInside" id="KWC-EH-18U"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06Q-y8-vuY">
-                                <rect key="frame" x="90" y="303" width="140" height="30"/>
-                                <state key="normal" title="Big Popup Centered">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showBigPopupCentered:" destination="UUO-YB-D4k" eventType="touchUpInside" id="Lud-qo-TDS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfT-M4-9N2">
-                                <rect key="frame" x="48" y="361" width="225" height="30"/>
-                                <state key="normal" title="Big Popup Centered With Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showBigPopupCenteredWithButton:" destination="UUO-YB-D4k" eventType="touchUpInside" id="NGz-7o-b8F"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-gi-yW8">
+                                <rect key="frame" x="49" y="224" width="223" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-rp-g4y">
+                                        <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
+                                        <state key="normal" title="Big Popup On Top">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showBigPopupOnTop:" destination="UUO-YB-D4k" eventType="touchUpInside" id="wr0-Cz-FzQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-O7-HbT">
+                                        <rect key="frame" x="0.0" y="30" width="223" height="30"/>
+                                        <state key="normal" title="Big Popup On Bottom">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showBigPopupOnBottom:" destination="UUO-YB-D4k" eventType="touchUpInside" id="KWC-EH-18U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06Q-y8-vuY">
+                                        <rect key="frame" x="0.0" y="60" width="223" height="30"/>
+                                        <state key="normal" title="Big Popup Centered">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showBigPopupCentered:" destination="UUO-YB-D4k" eventType="touchUpInside" id="Lud-qo-TDS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfT-M4-9N2">
+                                        <rect key="frame" x="0.0" y="90" width="223" height="30"/>
+                                        <state key="normal" title="Big Popup Centered With Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showBigPopupCenteredWithButton:" destination="UUO-YB-D4k" eventType="touchUpInside" id="NGz-7o-b8F"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hdx-gi-yW8" firstAttribute="centerY" secondItem="gQl-mW-oMt" secondAttribute="centerY" id="9zv-gN-dNC"/>
+                            <constraint firstItem="hdx-gi-yW8" firstAttribute="centerX" secondItem="gQl-mW-oMt" secondAttribute="centerX" id="VpX-iX-xg1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q1a-eU-vOl"/>
                 </viewController>
@@ -185,50 +213,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEk-oI-wN1">
-                                <rect key="frame" x="122" y="171" width="77" height="30"/>
-                                <state key="normal" title="No Bounce">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="6oq-v9-rsy"/>
-                                    <action selector="showPopupWithoutBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="h4d-jc-dvX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-mn-nuH">
-                                <rect key="frame" x="113" y="254" width="95" height="30"/>
-                                <state key="normal" title="Weak Bounce">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="xoG-kZ-vaj"/>
-                                    <action selector="showPopupWithWeakBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="Kjz-yn-Rfg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDY-ZS-toZ">
-                                <rect key="frame" x="104" y="329" width="113" height="30"/>
-                                <state key="normal" title="Medium Bounce">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="vEs-cc-gHg"/>
-                                    <action selector="showPopupWithMediumBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="kT8-VI-VXI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-if-crW">
-                                <rect key="frame" x="109" y="409" width="103" height="30"/>
-                                <state key="normal" title="Strong Bounce">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="ev2-S2-DG2"/>
-                                    <action selector="showPopupWithStrongBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="bbN-rg-NXP"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-8j-g8Y">
+                                <rect key="frame" x="0.0" y="224" width="320" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEk-oI-wN1">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2mN-Y4-xHx"/>
+                                        </constraints>
+                                        <state key="normal" title="No Bounce">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="6oq-v9-rsy"/>
+                                            <action selector="showPopupWithoutBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="h4d-jc-dvX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-mn-nuH">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4Jc-yR-8j5"/>
+                                        </constraints>
+                                        <state key="normal" title="Weak Bounce">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="xoG-kZ-vaj"/>
+                                            <action selector="showPopupWithWeakBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="Kjz-yn-Rfg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDY-ZS-toZ">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="992-XW-sgc"/>
+                                        </constraints>
+                                        <state key="normal" title="Medium Bounce">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="vEs-cc-gHg"/>
+                                            <action selector="showPopupWithMediumBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="kT8-VI-VXI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-if-crW">
+                                        <rect key="frame" x="0.0" y="90" width="320" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Rj6-6j-1Vu"/>
+                                        </constraints>
+                                        <state key="normal" title="Strong Bounce">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="ev2-S2-DG2"/>
+                                            <action selector="showPopupWithStrongBounce:" destination="laD-q2-qCs" eventType="touchUpInside" id="bbN-rg-NXP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HEk-oI-wN1" firstAttribute="centerX" secondItem="cSB-8j-g8Y" secondAttribute="centerX" id="3ut-hR-eZD"/>
+                                    <constraint firstItem="L4U-if-crW" firstAttribute="centerX" secondItem="cSB-8j-g8Y" secondAttribute="centerX" id="6HN-86-R8G"/>
+                                    <constraint firstItem="iI7-mn-nuH" firstAttribute="centerX" secondItem="cSB-8j-g8Y" secondAttribute="centerX" id="A1n-x0-6kS"/>
+                                    <constraint firstItem="hDY-ZS-toZ" firstAttribute="width" secondItem="cSB-8j-g8Y" secondAttribute="width" id="SGX-cB-whc"/>
+                                    <constraint firstItem="HEk-oI-wN1" firstAttribute="width" secondItem="cSB-8j-g8Y" secondAttribute="width" id="YCk-YA-QN0"/>
+                                    <constraint firstItem="iI7-mn-nuH" firstAttribute="width" secondItem="cSB-8j-g8Y" secondAttribute="width" id="aPH-pe-1yH"/>
+                                    <constraint firstItem="L4U-if-crW" firstAttribute="width" secondItem="cSB-8j-g8Y" secondAttribute="width" id="vLr-KU-KsU"/>
+                                    <constraint firstItem="hDY-ZS-toZ" firstAttribute="centerX" secondItem="cSB-8j-g8Y" secondAttribute="centerX" id="vPu-kL-4ZE"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cSB-8j-g8Y" firstAttribute="centerX" secondItem="zRI-N3-Alm" secondAttribute="centerX" id="HfA-K1-qRu"/>
+                            <constraint firstItem="cSB-8j-g8Y" firstAttribute="width" secondItem="zRI-N3-Alm" secondAttribute="width" id="KX8-zF-905"/>
+                            <constraint firstItem="cSB-8j-g8Y" firstAttribute="centerY" secondItem="zRI-N3-Alm" secondAttribute="centerY" id="jwO-xt-WFi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dHt-GP-fpO"/>
+                    <connections>
+                        <outlet property="buttonsStackView" destination="cSB-8j-g8Y" id="LM7-Fa-3F2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsZ-tv-W7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,35 +309,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUP-ZZ-gSz">
-                                <rect key="frame" x="82" y="176" width="157" height="30"/>
-                                <state key="normal" title="Custom Popup On Top">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="svk-Gh-iIq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnB-yC-BIf">
-                                <rect key="frame" x="69" y="262" width="183" height="30"/>
-                                <state key="normal" title="Custom Popup On Bottom">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupOnBottom:" destination="xav-d1-zmY" eventType="touchUpInside" id="Cy7-GV-jdJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPU-JM-rHw">
-                                <rect key="frame" x="75" y="361" width="171" height="30"/>
-                                <state key="normal" title="Custom Popup Centered">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showCustomPopupCentered:" destination="xav-d1-zmY" eventType="touchUpInside" id="1Mf-os-3vu"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xp9-kk-xax">
+                                <rect key="frame" x="70" y="239" width="180" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUP-ZZ-gSz">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                        <state key="normal" title="Custom Popup On Top">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupOnTop:" destination="xav-d1-zmY" eventType="touchUpInside" id="svk-Gh-iIq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnB-yC-BIf">
+                                        <rect key="frame" x="0.0" y="30" width="180" height="30"/>
+                                        <state key="normal" title="Custom Popup On Bottom">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupOnBottom:" destination="xav-d1-zmY" eventType="touchUpInside" id="Cy7-GV-jdJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPU-JM-rHw">
+                                        <rect key="frame" x="0.0" y="60" width="180" height="30"/>
+                                        <state key="normal" title="Custom Popup Centered">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCustomPopupCentered:" destination="xav-d1-zmY" eventType="touchUpInside" id="1Mf-os-3vu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xp9-kk-xax" firstAttribute="centerY" secondItem="MwC-fv-n6e" secondAttribute="centerY" id="812-2M-MvO"/>
+                            <constraint firstItem="xp9-kk-xax" firstAttribute="centerX" secondItem="MwC-fv-n6e" secondAttribute="centerX" id="a7Z-Lu-G5O"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GZv-kQ-xKi"/>
                 </viewController>
@@ -283,9 +355,4 @@
             <point key="canvasLocation" x="1202" y="489"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
